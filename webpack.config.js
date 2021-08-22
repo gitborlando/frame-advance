@@ -17,7 +17,6 @@ module.exports = {
             use: "ts-loader"
         }]
     },
-    target: false,
     resolve: {
         extensions: ['.ts', '.js']
     },
