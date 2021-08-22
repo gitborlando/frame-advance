@@ -1,5 +1,6 @@
 import { Container, inject, METADATA_KEY } from 'inversify'
 import { buildProviderModule, fluentProvide } from 'inversify-binding-decorators'
+import 'reflect-metadata'
 
 type ConstructorOf<T, TArgs extends unknown[] = any[]> = new (...args: TArgs) => T
 
