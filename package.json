@@ -4,7 +4,7 @@
   "main": "./dist/index.js",
   "description": "A Mini Framework",
   "scripts": {
-    "build": "webpack"
+    "build": "rollup -c"
   },
   "keywords": [
     "framework",
@@ -13,14 +13,21 @@
   "author": "gitborlando",
   "license": "ISC",
   "devDependencies": {
+    "@rollup/plugin-commonjs": "^20.0.0",
+    "@rollup/plugin-node-resolve": "^13.0.4",
+    "rollup": "^2.56.3",
+    "rollup-plugin-typescript": "^1.0.1",
     "ts-loader": "^9.2.5",
     "typescript": "^4.3.5",
     "webpack": "^5.50.0",
     "webpack-cli": "^4.8.0"
   },
   "dependencies": {
+    "@types/node": "^16.7.1",
     "inversify": "^5.1.1",
     "inversify-binding-decorators": "^4.0.0",
-    "reflect-metadata": "^0.1.13"
+    "inversify-inject-decorators": "^3.1.0",
+    "reflect-metadata": "^0.1.13",
+    "rollup-plugin-sourcemaps": "^0.6.3"
   }
 }
