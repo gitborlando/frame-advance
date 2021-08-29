@@ -1,6 +1,5 @@
-import { Container, inject, LazyServiceIdentifer, METADATA_KEY } from 'inversify'
+import { Container, inject, METADATA_KEY } from 'inversify'
 import { buildProviderModule, fluentProvide } from 'inversify-binding-decorators'
-import getDecorators from 'inversify-inject-decorators'
 import 'reflect-metadata'
 
 type ConstructorOf<T, TArgs extends unknown[] = any[]> = new (...args: TArgs) => T
@@ -17,13 +16,7 @@ export interface ManagerDecorator extends ParameterDecorator {
 
 export function createManagerDecorator(managerId: string): ManagerDecorator {
   const symbol = Symbol(managerId)
-  const c = createContainer()
-  const {lazyInject} = getDecorators(c)
-  return Object.assign(lazyInject(symbol), { symbol }) as ManagerDecorator
-}
-
-export function lazyManager(id: string){
-  
+  return Object.assign(inject(symbol), { symbol }) as ManagerDecorator
 }
 
 export function provide(managerDecorator: ManagerDecorator) {
